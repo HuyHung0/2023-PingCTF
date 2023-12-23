@@ -36,12 +36,13 @@ We use `socket` python module to interact with the server. Some useful function 
 - parse the response by lines: `response.split('\n')`
 - send `something` to the server: `s.sendall('something\n'.encode('utf-8'))`
 - close connection: `s.close()`
+  
 ## Reproduce the challenge
-The organizer of the ctf provided the docker file in the folder `../wow/`. Go to this folder.
+The organizer of the ctf provided the docker file in the zip file `../wow.zip`. Extract and go to that folder.
 
 Build
 ```bash
-docker compse up --build -d
+docker compose up --build -d
 ```
 
 Run
@@ -54,4 +55,4 @@ Interact with the server
 nc localhost 20001
 ```
 
-To get flag with this server, run `wow-localhost.py` (this file modifies `wow.py` by changing`host` from `wow.knping.pl` to `localhost`).
+To get the flag with this server, run `wow-localhost.py` (this file modifies `wow.py` by changing`host` from `wow.knping.pl` to `localhost`).
