@@ -2,7 +2,7 @@
   - [Background information of challenge](#background-information-of-challenge)
   - [Idea](#idea)
   - [Why we can do it](#why-we-can-do-it)
-  - [Psudo-code](#psudo-code)
+  - [Pseudo-code](#pseudo-code)
   - [Solution](#solution)
   - [Reproduce the challenge](#reproduce-the-challenge)
 
@@ -20,7 +20,7 @@ We know that if a seed is set, the value of random function only depends on the 
 
 There is a python module `randcrack`. However, it requires the values of 625 consecutive random function with same range. This module can not be used for this challenge. In this challenge, the ranges are changing. We have to write our own program. Note that although the range of random function changes, but we know exactly what is the range.
 
-## Psudo-code
+## Pseudo-code
 - Doing about 150 bets with the server. Parse the return from server, extract all random values and store it in a file `data.txt`. With 150 bets, we have approximate 900 random values in `data.txt`.
 - Bruteforce the seed between 1-10_000_000 by computing the values of consecutive 625 random functions with that seed and comparing with the values in `data.txt`. I don't know how much consecutive random functions are enough, just take 625 as same as in `randcrack` module. The running time is only about 1 minute.
 - After having the seed, we fix the seed and do again 150bets with a simulate game function (not bet with the server) to make the value of random function from the simulate game align with the value of random function in the server.
